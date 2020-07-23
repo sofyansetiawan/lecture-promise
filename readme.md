@@ -33,13 +33,9 @@
     - Penulisan -- sequential / synchronous, proses didalamnya -- asynchronous
       - Tidak menjorok ke dalam seperti pyramid of doom
   - **Promise Chaining**
-    - Tinggal copas dari atas, lalu kita ganti parameter yang digabungkan saja
     - Sama-sama me-return new promise dan akan di-passing ke parameter selanjutnya
-    - Jika tidak di return promise / sebuah data maka **undefined**
+    - Jika tidak di return promise / sebuah data yang di return maka **undefined** di then() berikutnya
   - **Promise Hell** (avoid it)
-    - Bungkus lagi dalam suatu promise, untuk mengembalikan
-  - Promise Method
-    - Promise all jika membutuhkan data di then sebelumnya atau membuat variabel di luar promise
   - Mengubah Callback menjadi Promise
     - Promise readFile (**fs.readFilePromise**) Cek di Dokumentasi
       - Membaca 3 file JSON
