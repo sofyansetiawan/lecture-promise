@@ -130,7 +130,7 @@ todoSofyan("beli jus")
                         todoSofyan(`${data}, beli buah`)
                         .then((data) => {
                             console.log(data);
-                            return todoSofyan(`${data}, beli hp`);
+                            todoSofyan(`${data}, beli hp`);
                         })
                         .catch((err) => {
                             console.log(err);
