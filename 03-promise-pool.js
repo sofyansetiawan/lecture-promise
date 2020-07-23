@@ -6,33 +6,39 @@ const pool = new Pool({ /* config */})
 
 arrData = []
 
-data.forEach(element => {
+data1.forEach(element => {
     arrData.push(`('${element.name}', '${element.name}')`);
 });
 
+// * Output
 // [
 //     `('${element.name}', '${element.name}')`,
 //     `('${element.name}', '${element.name}')`,
 //     `('${element.name}', '${element.name}')`
 // ]
 
-const insert = `
+const insert1 = `
     INSERT INTO "namatable" ("nama", "alamat") 
     VALUES ${arrData.join(",")};
-`
+`;
 
+// * create insert2 and insert3
 
 pool.query(insert1)
-    .then(()=>{
+    .then((res) => {
         console.log("Success Add data1");
         return pool.query(insert2)
     })
-    .then(()=>{
+    .then((res) => {
         console.log("Success Add data2");
-        return pool.query(insert2);
+        return pool.query(insert3);
     })
-    .then(()=>{
+    .then((res) => {
         console.log("Success Add data3");
+        pool.end();
+    })
+    .catch((e) => {
+        console.log(e);
         pool.end();
     })
 
